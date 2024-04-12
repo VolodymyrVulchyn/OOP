@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/US/Desktop",
-      "program": "c:/Users/US/Desktop/build/Debug/outDebug",
+      "cwd": "c:/Users/US/Desktop/VULCHYN VOLODYMYR/OOPVV2",
+      "program": "c:/Users/US/Desktop/VULCHYN VOLODYMYR/OOPVV2/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -1,5 +1,6 @@
 #include "Part.h"
 
+
 class Lights : public Part {
 public:
     Lights(double price, std::string name) : Part(price, name) {} 

@@ -5,15 +5,15 @@
 #include "BrakeDisc.h"
 #include "Radiator.h"
 #include "SparkPlug.h"
-#include "ShoppingCart.h"
 #include "Lights.h"
 #include "CoolingSystem.h"
 #include "Suspension.h"
 #include "FuelSystem.h"
-
+#include "LinkedList.h"
+// #include "ShoppingCart.h"
 
 int main() {
-    ShoppingCart cart; 
+    LinkedList list; 
 
     std::shared_ptr<Part> engine(new Engine(5000, "V8 Engine"));
     std::shared_ptr<Part> oil(new Oil(50, "Synthetic Motor Oil"));
@@ -27,36 +27,37 @@ int main() {
     std::shared_ptr<Part> fuelSystem(new FuelSystem(2000, "Iridium Spark Plug"));
     
 
-
+    list.addFront(engine);
+    list.addFront(oil);
+    list.addFront(brakePad);
+    list.addFront(brakeDisc);
+    list.addFront(radiator);
+    list.addFront(sparkPlug);
+    list.addFront(lights);
+    list.addFront(coolingSystem);
+    list.addFront(suspension);
+    list.addFront(fuelSystem);
     
-    cart.addPart(engine);
-    cart.addPart(oil);
-    cart.addPart(brakePad);
-    cart.addPart(brakeDisc);
-    cart.addPart(radiator);
-    cart.addPart(sparkPlug);
-    cart.addPart(lights);
-    cart.addPart(coolingSystem);
-    cart.addPart(suspension);
-    cart.addPart(fuelSystem);
-    
-    
+    std::cout << "--------------CAR MOTORS CLUB--------------" << std::endl;
     std::cout << "Your bin: \n" << std::endl;
     
-    cart.displayCart();
+    list.display();
     
-    std::cout << "Total: " << cart.getTotal() << std::endl;
+    std::cout << "Total: " << list.getTotal() << std::endl;
+    std::cout << "--------------CAR MOTORS CLUB--------------" << std::endl;
+    
+    list.remove(brakePad);
+    list.remove(suspension);
+    list.remove(fuelSystem);
+    
 
-    cart.removePart(brakePad);
-    cart.removePart(suspension);
-    cart.removePart(fuelSystem);
-    
-    
+    std::cout << "\n--------------CAR MOTORS CLUB--------------";
     std::cout << "\nYour bin after removing one of elements:\n" << std::endl;
 
-    cart.displayCart();
+    list.display();
     
-    std::cout << "Total: " << cart.getTotal() << std::endl;
-
+    // cart.displayRemovedParts();
+    std::cout << "Total: " << list.getTotal() << std::endl;
+    std::cout << "--------------CAR MOTORS CLUB--------------" << std::endl;
     return 0;
 }
