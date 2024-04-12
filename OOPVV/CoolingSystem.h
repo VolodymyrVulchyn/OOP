@@ -1,11 +1,11 @@
 #include "Part.h"
 
-// Клас для моторного масла, наслідується від Part
+
 class CoolingSystem : public Part {
 public:
-    CoolingSystem(double price, std::string name) : Part(price, name) {} // Конструктор
+    CoolingSystem(double price, std::string name) : Part(price, name) {} 
 
-    void display() const override { // Перевизначений метод для відображення інформації про масло
+    void display() const override { 
         std::cout << "Cooling System: " << getName() << ", Price: " << getPrice() << std::endl;
     }
 };

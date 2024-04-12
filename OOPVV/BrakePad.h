@@ -1,11 +1,11 @@
 #include "Part.h"
 
-// Клас для суппортів, наслідується від Part
+
 class BrakePad : public Part {
 public:
-    BrakePad(double price, std::string name) : Part(price, name) {} // Конструктор
+    BrakePad(double price, std::string name) : Part(price, name) {} 
 
-    void display() const override { // Перевизначений метод для відображення інформації про суппорти
+    void display() const override { 
         std::cout << "Brake Pad: " << getName() << ", Price: " << getPrice() << std::endl;
     }
 };

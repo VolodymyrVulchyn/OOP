@@ -1,11 +1,11 @@
 #include "Part.h"
 
-// Клас для гальмівних дисків, наслідується від Part
+
 class BrakeDisc : public Part {
 public:
-    BrakeDisc(double price, std::string name) : Part(price, name) {} // Конструктор
+    BrakeDisc(double price, std::string name) : Part(price, name) {} 
 
-    void display() const override { // Перевизначений метод для відображення інформації про гальмівні диски
+    void display() const override { 
         std::cout << "Brake Disc: " << getName() << ", Price: " << getPrice() << std::endl;
     }
 };
