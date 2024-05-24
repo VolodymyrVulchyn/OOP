@@ -13,9 +13,8 @@
 
 
 int main() {
-    ShoppingCart cart; // Створення корзини покупок
+    ShoppingCart cart; 
 
-    // Створення запчастин
     std::shared_ptr<Part> engine(new Engine(5000, "V8 Engine"));
     std::shared_ptr<Part> oil(new Oil(50, "Synthetic Motor Oil"));
     std::shared_ptr<Part> brakePad(new BrakePad(30, "Ceramic Brake Pads"));
@@ -29,7 +28,7 @@ int main() {
     
 
 
-    // Додавання запчастин до корзини
+    
     cart.addPart(engine);
     cart.addPart(oil);
     cart.addPart(brakePad);
@@ -42,16 +41,12 @@ int main() {
     cart.addPart(fuelSystem);
     
     
-    // Відображення всіх запчастин в корзині до видалення одного з елементів
     std::cout << "Your bin: \n" << std::endl;
     
-    // Відображення всіх запчастин в корзині до видалення одного з елементів
     cart.displayCart();
     
-    // Виведення загальної суми покупки до видалення одного з елементів
     std::cout << "Total: " << cart.getTotal() << std::endl;
 
-    // Видалення однієї запчастини з корзини
     cart.removePart(brakePad);
     cart.removePart(suspension);
     cart.removePart(fuelSystem);
@@ -59,11 +54,8 @@ int main() {
     
     std::cout << "\nYour bin after removing one of elements:\n" << std::endl;
 
-    // Відображення всіх запчастин в корзині після видалення одного з елементів
     cart.displayCart();
     
-    // cart.displayRemovedParts();
-    // Виведення загальної суми покупки після видалення одного з елементів
     std::cout << "Total: " << cart.getTotal() << std::endl;
 
     return 0;
