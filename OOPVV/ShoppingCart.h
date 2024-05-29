@@ -1,27 +1,26 @@
 #include <vector>
 #include <memory>
-#include <algorithm> // Include for std::remove and std::remove_if
+#include <algorithm> 
 #include "Part.h"
 
 // Клас для корзини покупок
 class ShoppingCart {
 private:
-    std::vector<std::shared_ptr<Part>> parts; // Вектор для зберігання запчастин
-    std::vector<std::shared_ptr<Part>> removedParts; // Вектор для зберігання видалених запчастин
+    std::vector<std::shared_ptr<Part>> parts; 
+    std::vector<std::shared_ptr<Part>> removedParts; 
     
 public:
-    void addPart(const std::shared_ptr<Part>& part) { // Додати запчастину до корзини
+    void addPart(const std::shared_ptr<Part>& part) { 
         parts.push_back(part);
     }
 
-    void removePart(const std::shared_ptr<Part>& part) { // Видалити запчастину з корзини
-        // Використання std::remove_if для видалення елемента за умовою
+    void removePart(const std::shared_ptr<Part>& part) { 
         auto newEnd = std::remove_if(parts.begin(), parts.end(),
                                     [&part](const std::shared_ptr<Part>& p) { return p == part; });
-        parts.erase(newEnd, parts.end()); // Видалення всіх елементів після нового кінця вектора
+        parts.erase(newEnd, parts.end());
     }
 
-    double getTotal() const { // Обчислити загальну суму покупки
+    double getTotal() const { 
         double total = 0.0;
         for (const auto& part : parts) {
             total += part->getPrice();
@@ -29,13 +28,13 @@ public:
         return total;
     }
 
-    void displayCart() const { // Відобразити всі запчастини в корзині
+    void displayCart() const { 
         for (const auto& part : parts) {
             part->display();
         }
     }
 
-    // void displayRemovedParts() const { // Відобразити всі видалені запчастини
+    // void displayRemovedParts() const { 
     //     for (const auto& part : removedParts) {
     //         part->display();
     //     }
