@@ -1,11 +1,11 @@
 #include "Part.h"
 
-// Клас для свічок запалювання, наслідується від Part
+
 class SparkPlug : public Part {
 public:
-    SparkPlug(double price, std::string name) : Part(price, name) {} // Конструктор
+    SparkPlug(double price, std::string name) : Part(price, name) {} 
 
-    void display() const override { // Перевизначений метод для відображення інформації про свічки запалювання
+    void display() const override { 
         std::cout << "Spark Plug: " << getName() << ", Price: " << getPrice() << std::endl;
     }
 };
